@@ -2,6 +2,7 @@
 .venv/
 venv/
 env/
+tkmod/
 
 # Python
 __pycache__/
