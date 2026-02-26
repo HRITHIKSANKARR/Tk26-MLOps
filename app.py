@@ -26,10 +26,10 @@ if model:
     # 2. User Input Sliders (4 Behavioral Pillars)
     st.sidebar.header("Wallet Behavioral Metrics")
     
-    avg_min_sent = st.sidebar.slider("Velocity: Avg min between sent tnx", 0.0, 10000.0, 500.0)
-    time_diff = st.sidebar.slider("Lifespan: Time Diff (Mins)", 0.0, 1000000.0, 10000.0)
-    sent_tnx = st.sidebar.slider("Outflow: Sent tnx", 0, 10000, 10)
-    received_tnx = st.sidebar.slider("Inflow: Received Tnx", 0, 10000, 20)
+    avg_min_sent = st.sidebar.slider("Velocity: Avg min between sent tnx", 0.0, 10.0, 100.0)
+    time_diff = st.sidebar.slider("Lifespan: Time Diff (Mins)", 0.0, 200.0, 50.0)
+    sent_tnx = st.sidebar.slider("Outflow: Sent tnx", 0, 500, 100)
+    received_tnx = st.sidebar.slider("Inflow: Received Tnx", 0, 500, 200)
     
     # 3. Predict Button
     if st.button("Scan Wallet Strategy"):
@@ -43,7 +43,7 @@ if model:
         
         # Execute Prediction
         prediction = model.predict(input_data)[0]
-        
+    
         # Render Output
         st.subheader("Threat Assessment Result")
         if prediction == 0:
